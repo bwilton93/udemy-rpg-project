@@ -16,9 +16,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         HorizontalMovement();
-        if (Input.GetKeyDown(KeyCode.Space)){
-            JumpImpulse();
-        }
+        JumpImpulse();
     }
 
     void HorizontalMovement() 
@@ -29,6 +27,8 @@ public class Player : MonoBehaviour
 
     void JumpImpulse() 
     {
-        rb.linearVelocityY = jumpHeight;
+        if (Input.GetKeyDown(KeyCode.Space)){
+            rb.linearVelocityY = jumpHeight;
+        }
     }
 }
